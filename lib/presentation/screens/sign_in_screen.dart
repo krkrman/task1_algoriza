@@ -23,7 +23,7 @@ class SignInScreen extends StatelessWidget {
                 children: [
                   const CustomText(
                     text: 'Welcome to Fashion Daily',
-                    fontSize: 18,
+                    fontSize: 15,
                     alignment: Alignment.centerLeft,
                     color: Color(0xff91929B),
                   ),
@@ -44,8 +44,11 @@ class SignInScreen extends StatelessWidget {
                         color: Color(0xff3586FD),
                         fontSize: 15,
                       ),
+                      SizedBox(
+                        width: 3,
+                      ),
                       Icon(
-                        Icons.question_mark_outlined,
+                        FontAwesomeIcons.solidCircleQuestion,
                         color: Color(0xff3586FD),
                         size: 15,
                       )
@@ -57,7 +60,7 @@ class SignInScreen extends StatelessWidget {
                   const CustomText(
                     text: 'Phone Number',
                     color: Color(0xff9D9DA8),
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: FontWeight.w500,
                   ),
                   const SizedBox(
@@ -122,12 +125,12 @@ class SignInScreen extends StatelessWidget {
                       CustomText(
                         text: 'Doesn\'t have an account? ',
                         color: Color(0xff9D9DA8),
-                        fontSize: 18,
+                        fontSize: 15,
                         fontWeight: FontWeight.w500,
                       ),
                       CustomText(
-                        text: 'Register',
-                        fontSize: 18,
+                        text: 'Register here',
+                        fontSize: 15,
                         fontWeight: FontWeight.w500,
                         color: Colors.blue,
                       ),

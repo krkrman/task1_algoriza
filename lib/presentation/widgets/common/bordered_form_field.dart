@@ -9,7 +9,7 @@ class BorderedFormField extends StatelessWidget {
   final ValueChanged<String>? onChange;
   final FormFieldValidator<String>? validate;
   final String label;
-  final IconData prefixIcon;
+  final IconData? prefixIcon;
   final IconData? suffixIcon;
   final VoidCallback? suffixPressed;
   final GestureTapCallback? onTap;
@@ -44,10 +44,9 @@ class BorderedFormField extends StatelessWidget {
       validator: validate,
       decoration: InputDecoration(
         labelText: label,
-        prefixIcon: Icon(prefixIcon),
-        suffixIcon: suffixIcon != null
-            ? IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon))
-            : null,
+        prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+        suffixIcon:
+            suffixIcon != null ? IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon)) : null,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(radius)),
         ),
