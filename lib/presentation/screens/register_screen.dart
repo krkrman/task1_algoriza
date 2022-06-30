@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:task1_algoriza/presentation/screens/onboarding_screen.dart';
+import 'package:task1_algoriza/presentation/screens/sign_in_screen.dart';
 import 'package:task1_algoriza/presentation/widgets/common/bordered_form_field.dart';
 import 'package:task1_algoriza/presentation/widgets/common/custom_button.dart';
 import 'package:task1_algoriza/presentation/widgets/common/custom_social_button.dart';
@@ -14,6 +16,7 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
       child: Column(children: [
         Stack(
           children: [
@@ -26,7 +29,12 @@ class RegisterScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OnboardingScreen()),
+                  );
+                },
                 backgroundColor: Colors.black,
                 child: const Icon(
                   Icons.arrow_back_ios_new_sharp,
@@ -39,35 +47,35 @@ class RegisterScreen extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const CustomText(
+              CustomText(
                 text: 'Welcome to Fashion Daily',
                 fontSize: 15,
                 alignment: Alignment.centerLeft,
-                color: Color(0xff91929B),
+                color: const Color(0xff91929B),
               ),
               const SizedBox(
                 height: 15,
               ),
               Row(
-                children: const [
+                children: [
                   CustomText(
                     text: 'Register',
                     alignment: Alignment.centerLeft,
                     fontSize: 35,
                     fontWeight: FontWeight.w500,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   CustomText(
                     text: 'Help',
-                    color: Color(0xff3586FD),
+                    color: const Color(0xff3586FD),
                     fontSize: 15,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 3,
                   ),
-                  Icon(
+                  const Icon(
                     FontAwesomeIcons.solidCircleQuestion,
-                    color: Color(0xff3586FD),
+                    color: const Color(0xff3586FD),
                     size: 15,
                   )
                 ],
@@ -75,9 +83,9 @@ class RegisterScreen extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              const CustomText(
+              CustomText(
                 text: 'Email',
-                color: Color(0xff9D9DA8),
+                color: const Color(0xff9D9DA8),
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
               ),
@@ -93,9 +101,9 @@ class RegisterScreen extends StatelessWidget {
               const SizedBox(
                 height: 8,
               ),
-              const CustomText(
+              CustomText(
                 text: 'Phone Number',
-                color: Color(0xff9D9DA8),
+                color: const Color(0xff9D9DA8),
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
               ),
@@ -111,9 +119,9 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 initialCountryCode: 'EG',
               ),
-              const CustomText(
+              CustomText(
                 text: 'Password',
-                color: Color(0xff9D9DA8),
+                color: const Color(0xff9D9DA8),
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
               ),
@@ -126,6 +134,7 @@ class RegisterScreen extends StatelessWidget {
                 validate: null,
                 isPassword: true,
                 label: "Password",
+                suffixIcon:Icons.remove_red_eye,
                 prefixIcon: null,
               ),
               const SizedBox(
@@ -149,7 +158,7 @@ class RegisterScreen extends StatelessWidget {
                       height: 1,
                     ),
                   ),
-                  const CustomText(
+                  CustomText(
                     text: 'OR',
                     color: Colors.grey,
                     fontSize: 10,
@@ -177,10 +186,10 @@ class RegisterScreen extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   CustomText(
                     text: 'Has an account? ',
-                    color: Color(0xff9D9DA8),
+                    color: const Color(0xff9D9DA8),
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
@@ -189,15 +198,21 @@ class RegisterScreen extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.blue,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignInScreen()),
+                      );
+                    },
                   ),
                 ],
               ),
               const SizedBox(
                 height: 25,
               ),
-              const CustomText(
+              CustomText(
                 text: 'By registering your account,you are agree to our',
-                color: Color(0xff9D9DA8),
+                color: const Color(0xff9D9DA8),
                 fontSize: 15,
                 alignment: Alignment.center,
                 fontWeight: FontWeight.w500,
@@ -205,7 +220,7 @@ class RegisterScreen extends StatelessWidget {
               const SizedBox(
                 height: 2,
               ),
-              const CustomText(
+              CustomText(
                 text: 'Terms and Conditions',
                 color: Colors.blue,
                 fontSize: 15,
