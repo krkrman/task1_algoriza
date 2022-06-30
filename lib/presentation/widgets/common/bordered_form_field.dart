@@ -8,16 +8,18 @@ class BorderedFormField extends StatelessWidget {
   final ValueChanged<String>? onSubmit;
   final ValueChanged<String>? onChange;
   final FormFieldValidator<String>? validate;
-  final String label;
+  final String? label;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final VoidCallback? suffixPressed;
   final GestureTapCallback? onTap;
   final double radius;
+  final String? hint;
 
   const BorderedFormField({
     required this.controller,
     required this.textInputType,
+    this.hint,
     this.isPassword = false,
     this.onSubmit,
     this.onChange,
@@ -44,6 +46,7 @@ class BorderedFormField extends StatelessWidget {
       validator: validate,
       decoration: InputDecoration(
         labelText: label,
+        hintText: hint,
         prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
         suffixIcon:
             suffixIcon != null ? IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon)) : null,

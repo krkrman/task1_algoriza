@@ -96,8 +96,8 @@ class RegisterScreen extends StatelessWidget {
                   controller: TextEditingController(),
                   textInputType: TextInputType.emailAddress,
                   validate: null,
-                  label: "EG. example@email.com",
-                  prefixIcon: null),
+                  hint: "EG. example@email.com",
+                  prefixIcon: null, label: null,),
               const SizedBox(
                 height: 8,
               ),
@@ -112,7 +112,7 @@ class RegisterScreen extends StatelessWidget {
               ),
               IntlPhoneField(
                 decoration: const InputDecoration(
-                  labelText: 'EG. 812345664',
+                  hintText: 'EG. 812345664',
                   border: OutlineInputBorder(
                     borderSide: BorderSide(),
                   ),
@@ -159,7 +159,7 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                   CustomText(
-                    text: 'OR',
+                    text: 'Or',
                     color: Colors.grey,
                     fontSize: 10,
                     padding: 15,
